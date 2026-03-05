@@ -4,6 +4,7 @@
   background: var(--win-border);
   padding: 2px;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  flex: 1;
 }
 
 .window-mid {
@@ -108,10 +109,11 @@
 .window-body {
   background: #f0f0f0;
   padding: 15px;
-  min-height: 100px;
+  /* min-height: 100px; */
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .window-controls-spacer {
