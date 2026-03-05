@@ -1,0 +1,159 @@
+---
+interface Props {
+  target: string; // ISO date string, e.g. "2026-04-12"
+}
+const { target } = Astro.props;
+---
+
+<div class="countdown-container">
+<div class="countdown-display" data-target={target}>
+  <div class="seg-unit">
+    <div class="seg-digits-wrap">
+      <span class="seg-ghost">88</span>
+      <span class="seg-digits" id="cd-days">00</span>
+    </div>
+    <span class="seg-label">DAYS</span>
+  </div>
+  <span class="seg-sep">:</span>
+  <div class="seg-unit">
+    <div class="seg-digits-wrap">
+      <span class="seg-ghost">88</span>
+      <span class="seg-digits" id="cd-hours">00</span>
+    </div>
+    <span class="seg-label">HRS</span>
+  </div>
+  <span class="seg-sep">:</span>
+  <div class="seg-unit">
+    <div class="seg-digits-wrap">
+      <span class="seg-ghost">88</span>
+      <span class="seg-digits" id="cd-mins">00</span>
+    </div>
+    <span class="seg-label">MIN</span>
+  </div>
+  <span class="seg-sep">:</span>
+  <div class="seg-unit">
+    <div class="seg-digits-wrap">
+      <span class="seg-ghost">88</span>
+      <span class="seg-digits" id="cd-secs">00</span>
+    </div>
+    <span class="seg-label">SEC</span>
+  </div>
+</div>
+</div>
+
+<style>
+  .countdown-container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    container-type: size;
+  }
+
+  .countdown-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #061318;
+    border: 2px solid var(--border-dark);
+    box-shadow:
+      inset 2px 2px 0px rgba(0, 0, 0, 0.5),
+      inset -1px -1px 0px rgba(0, 180, 216, 0.06);
+    padding: 20px 24px;
+    flex: 1;
+    width: 100%;
+  }
+
+  .seg-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .seg-digits-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .seg-ghost {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Departure Mono', monospace;
+    font-size: clamp(16px, 10cqw, 52px);
+    line-height: 1;
+    color: rgba(0, 180, 216, 0.10);
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .seg-digits {
+    font-family: 'Departure Mono', monospace;
+    font-size: clamp(16px, 10cqw, 52px);
+    line-height: 1;
+    color: var(--accent);
+    text-shadow:
+      1px 1px 0px var(--accent-dark),
+      0px 0px 8px rgba(0, 180, 216, 0.35);
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .seg-label {
+    font-family: 'Departure Mono', monospace;
+    font-size: clamp(8px, 2cqw, 10px);
+    color: rgba(0, 180, 216, 0.45);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .seg-sep {
+    font-family: 'Departure Mono', monospace;
+    font-size: clamp(16px, 10cqw, 52px);
+    line-height: 1;
+    color: var(--accent);
+    text-shadow:
+      1px 1px 0px var(--accent-dark),
+      0px 0px 8px rgba(0, 180, 216, 0.35);
+    margin-bottom: 22px;
+    opacity: 0.7;
+  }
+</style>
+
+<script>
+  const display = document.querySelector<HTMLElement>('.countdown-display');
+  const targetStr = display?.dataset.target ?? '';
+  const target = new Date(targetStr + 'T00:00:00');
+
+  const daysEl  = document.getElementById('cd-days')!;
+  const hoursEl = document.getElementById('cd-hours')!;
+  const minsEl  = document.getElementById('cd-mins')!;
+  const secsEl  = document.getElementById('cd-secs')!;
+
+  function pad(n: number): string {
+    return String(n).padStart(2, '0');
+  }
+
+  function update() {
+    const diff = Math.max(0, target.getTime() - Date.now());
+    const days  = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins  = Math.floor((diff % 3600000) / 60000);
+    const secs  = Math.floor((diff % 60000) / 1000);
+
+    daysEl.textContent  = pad(days);
+    hoursEl.textContent = pad(hours);
+    minsEl.textContent  = pad(mins);
+    secsEl.textContent  = pad(secs);
+  }
+
+  update();
+  setInterval(update, 1000);
+</script>

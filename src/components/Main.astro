@@ -1,0 +1,260 @@
+---
+import Window from './Window.astro';
+import Countdown from './Countdown.astro';
+import './main.css'
+---
+
+<main>
+  <div class="countdown-signup">
+	<Window title="CAT TOURNAMENT">
+		<h1>Coding & Algorithms Tournament</h1>
+		<p class="subtitle">// coming soon</p>
+		<hr />
+		<div class="info-grid-2">
+			<div class="inset info-block">
+				<span class="label">STATUS</span>
+				<span class="value">REGISTRATION OPEN</span>
+			</div>
+			<div class="inset info-block">
+				<span class="label">DATE</span>
+				<span class="value">TBD</span>
+			</div>
+		</div>
+		<div class="actions">
+			<a class="button" href="https://tlx.toki.id">REGISTER</a>
+			<a class="button secondary" href="#">BRACKETS</a>
+		</div>
+    </Window>
+    <Window title="COUNTDOWN">
+      <!-- <p>Register by:</p> -->
+      <Countdown target="2026-04-12" />
+    </Window>
+    </div>
+
+  <div class="cat-tab-container">
+    <img src="/Tab Kucing Close Up.png" class="tab-img" />
+    <img src="/cat_floating.png" class="cat-floating-img" />
+  </div>
+
+	<div class="info-section">
+		<div class="info-left">
+			<Window title="readme.md">
+				<p class="info-text">
+					A nationwide competitive programming competition.
+					<br/>
+					No LLMs, no AI assistance. Just you and your problem solving skills.
+				</p>
+			</Window>
+
+			<Window title="requirements.txt">
+				<p class="info-text">
+					<strong>Is Indonesian.</strong>
+				</p>
+				<hr/>
+				<div class="info-grid-3">
+					<div class="inset info-block">
+						<span class="label">
+							Category 1
+						</span>
+						<span class="value">
+							SMP/SMA/sederajat students
+						</span>
+					</div>
+					<div class="inset info-block">
+						<span class="label">
+							Category 2
+						</span>
+						<span class="value">
+							S1/S2 university students
+						</span>
+					</div>
+					<div class="inset info-block">
+						<span class="label">
+							Category 3
+						</span>
+						<span class="value">
+							Public
+						</span>
+					</div>
+				</div>
+			</Window>
+		</div>
+
+    <div class="image-window-wrapper">
+    <Window title="image.png">
+      <div class="left-right-thing">
+        <div class="left-thing">
+          <h1>Cash</h1>
+          <h1>prize</h1>
+          <h1>of IDR</h1>
+          <h1>60.000.000++</h1>
+        </div>
+        <div class="right-thing">
+          <div class="blank"></div>
+<img src="/kucingfull.png" height="200px"/>
+        </div>
+      </div>
+      <h4>+ transport / accomodation for 30 finalists</h4>
+
+		</Window>
+    <div class="image-below-space">
+      <Window title="meow!">
+        <div id="meow-icons" class="meow-icons"></div>
+      </Window>
+      </div>
+    </div>
+	</div>
+  <div class="inlined">
+  <Window title="timeline.db">
+    <table class="timeline">
+      <tbody>
+        <tr>
+          <td class="timeline-date">12/04/26</td>
+          <td class="timeline-content">Registration close</td>
+        </tr>
+        <tr>
+          <td class="timeline-date">25/04/26</td>
+          <td class="timeline-content">Preliminary round: batch 1</td>
+        </tr>
+        <tr>
+          <td class="timeline-date">03/05/26</td>
+          <td class="timeline-content">Preliminary round: batch 2</td>
+        </tr>
+        <tr>
+          <td class="timeline-date">16/05/26</td>
+          <td class="timeline-content">Semifinals</td>
+        </tr>
+        <tr>
+          <td class="timeline-date">06/06/26</td>
+          <td class="timeline-content">Onsite final round @ Monash University Indonesia</td>
+        </tr>
+      </tbody>
+    </table>
+  </Window>
+  <Window title="workshops.db">
+    <table class="timeline">
+      <tbody>
+        <tr>
+          <td class="timeline-date">28/03/26</td>
+          <td class="timeline-content">Basic programming & complexity analysis</td>
+        </tr>
+        <tr>
+          <td class="timeline-date">31/03/26</td>
+          <td class="timeline-content">Data Structs</td>
+        </tr>
+        <tr>
+          <td class="timeline-date">04/04/26</td>
+          <td class="timeline-content">Greedy & complete search</td>
+        </tr>
+        <tr>
+          <td class="timeline-date">07/04/26</td>
+          <td class="timeline-content">Graphs</td>
+        </tr>
+        <tr>
+          <td class="timeline-date">11/04/26</td>
+          <td class="timeline-content">Dynamic Programming</td>
+        </tr>
+      </tbody>
+    </table>
+
+    </Window>
+  </div>
+  <div class="sponsors">
+    <Window title="sponsors.waow">
+      <div class="sponsor-group">
+        <span class="sponsor-label">GOLD SPONSORS</span>
+        <div class="sponsor-logos">
+          <div class="sponsor-logo inset"></div>
+          <div class="sponsor-logo inset"></div>
+          <div class="sponsor-logo inset"></div>
+        </div>
+      </div>
+      <div class="sponsor-group">
+        <span class="sponsor-label">INFRASTRUCTURE PARTNERS</span>
+        <div class="sponsor-logos">
+          <div class="sponsor-logo inset"></div>
+          <div class="sponsor-logo inset"></div>
+        </div>
+      </div>
+      <div class="sponsor-group">
+        <span class="sponsor-label">SILVER SPONSORS</span>
+        <div class="sponsor-logos">
+          <div class="sponsor-logo inset"></div>
+          <div class="sponsor-logo inset"></div>
+          <div class="sponsor-logo inset"></div>
+          <div class="sponsor-logo inset"></div>
+        </div>
+      </div>
+    </Window>
+  </div>
+</main>
+
+<script>
+  const icons = [
+    'chip.PNG', 'chrome.PNG', 'cloud.PNG', 'cursor.PNG', 'dvd.PNG',
+    'folder.PNG', 'kucing-stretch.png', 'paws.PNG', 'screen.PNG', 'sound.PNG', 'trash.PNG'
+  ];
+
+  function shuffle<T>(arr: T[]): T[] {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function trimCanvas(src: string): Promise<string> {
+    return new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => {
+        const c = document.createElement('canvas');
+        c.width = img.width;
+        c.height = img.height;
+        const ctx = c.getContext('2d')!;
+        ctx.drawImage(img, 0, 0);
+        const { data, width, height } = ctx.getImageData(0, 0, c.width, c.height);
+        let top = height, bottom = 0, left = width, right = 0;
+        for (let y = 0; y < height; y++) {
+          for (let x = 0; x < width; x++) {
+            const a = data[(y * width + x) * 4 + 3];
+            const r = data[(y * width + x) * 4];
+            const g = data[(y * width + x) * 4 + 1];
+            const b = data[(y * width + x) * 4 + 2];
+            const isBlank = a < 10 || (r > 245 && g > 245 && b > 245);
+            if (!isBlank) {
+              if (y < top) top = y;
+              if (y > bottom) bottom = y;
+              if (x < left) left = x;
+              if (x > right) right = x;
+            }
+          }
+        }
+        const pad = 4;
+        top = Math.max(0, top - pad);
+        left = Math.max(0, left - pad);
+        bottom = Math.min(height - 1, bottom + pad);
+        right = Math.min(width - 1, right + pad);
+        const trimW = right - left + 1;
+        const trimH = bottom - top + 1;
+        const out = document.createElement('canvas');
+        out.width = trimW;
+        out.height = trimH;
+        out.getContext('2d')!.drawImage(c, left, top, trimW, trimH, 0, 0, trimW, trimH);
+        resolve(out.toDataURL());
+      };
+      img.src = src;
+    });
+  }
+
+  const container = document.getElementById('meow-icons');
+  if (container) {
+    const picked = shuffle(icons).slice(0, 8);
+    picked.forEach(name => {
+      const img = document.createElement('img');
+      img.alt = name.replace(/\.[^.]+$/, '');
+      container.appendChild(img);
+      trimCanvas(`/icons/${name}`).then(url => { img.src = url; });
+    });
+  }
+</script>

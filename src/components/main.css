@@ -1,0 +1,280 @@
+:root {
+	--gap: 24px;
+	--max-width: 80vw;
+}
+
+main {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--gap);
+	padding: 32px 16px;
+	position: relative;
+}
+
+main > :global(.window-outer) {
+	max-width: var(--max-width);
+}
+
+.countdown-signup {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: var(--gap);
+	width: 100%;
+	max-width: var(--max-width);
+	align-items: stretch;
+	position: relative;
+	z-index: 1;
+}
+
+.countdown-signup :global(.window-outer),
+.inlined :global(.window-outer),
+.info-section :global(.window-outer) {
+	width: 100%;
+}
+
+.info-section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gap);
+	width: 100%;
+	max-width: var(--max-width);
+	align-items: stretch;
+	position: relative;
+	z-index: 3;
+}
+
+.info-left {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+}
+
+.info-section > :global(.window-outer) {
+	height: 100%;
+}
+
+.info-section > :global(.window-outer) :global(img) {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.inlined {
+	display: flex;
+  width: var(--max-width);
+  justify-content: space-between;
+	gap: var(--gap);
+}
+
+.inlined > * {
+  flex: 1;
+}
+.info-grid-2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 8px;
+	margin-bottom: 20px;
+}
+
+.info-grid-3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 8px;
+	margin-bottom: 20px;
+}
+
+.info-block {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.label {
+	color: var(--text-muted);
+	letter-spacing: 0.05em;
+}
+
+.value {
+	color: var(--text);
+}
+
+.subtitle {
+	color: var(--text-muted);
+	font-size: 12px;
+	margin-bottom: 16px;
+}
+
+.info-text {
+	color: var(--text-muted);
+	line-height: 1.8;
+}
+
+.actions {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.timeline {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: 'Departure Mono';
+	font-size: var(--font-body);
+	border: 2px solid var(--border-dark);
+	box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.15);
+}
+
+.timeline tr:nth-child(odd)  { background: var(--surface); }
+.timeline tr:nth-child(even) { background: var(--bg); }
+.timeline tr:hover           { background: var(--bg-dark); }
+
+.timeline td {
+	padding: 8px 12px;
+	border: 2px solid var(--border-dark);
+	vertical-align: top;
+	line-height: 1.6;
+}
+
+.timeline-date {
+	white-space: nowrap;
+	font-weight: bold;
+	color: var(--text);
+	width: 1%;
+	border-right: 2px solid var(--border) !important;
+}
+
+.timeline-content {
+	color: var(--text-muted);
+	width: 99%;
+}
+
+.sponsors {
+	display: flex;
+	width: var(--max-width);
+}
+
+.sponsors > * {
+  flex: 1;
+}
+.sponsors :global(.window-body) {
+	display: flex;
+	flex-direction: row;
+	gap: var(--gap);
+}
+
+.sponsor-group {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.sponsor-label {
+	color: var(--text-muted);
+	font-size: var(--font-caption);
+	letter-spacing: 0.1em;
+}
+
+.sponsor-logos {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.sponsor-logo {
+	flex: 1;
+	min-height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--text-muted);
+	font-size: var(--font-caption);
+}
+
+.left-right-thing {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+
+}
+
+.left-thing {
+  width: 60%;
+  padding-top: 1.25rem;
+}
+
+.right-thing {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.image-window-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  gap: var(--gap);
+}
+
+.image-below-space {
+  flex: 1;
+  min-height: 0;
+}
+
+.image-below-space :global(.window-outer) {
+  height: 100%;
+}
+
+.image-below-space :global(.window-body) {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.cat-tab-container {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  height: 0;
+  overflow: visible;
+}
+
+.tab-img {
+  position: absolute;
+  bottom: -8vh;
+  left: 60vw;
+  z-index: 2;
+  height: 200px;
+}
+
+.cat-floating-img {
+  position: absolute;
+  bottom: -9vh;
+  left: 60vw;
+  z-index: 4;
+  height: 160px;
+}
+
+.meow-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 8px;
+  padding: 4px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.meow-icons img {
+  width: 48px;
+  height: 48px;
+  aspect-ratio: 1;
+  object-fit: contain;
+  image-rendering: pixelated;
+  display: block;
+}

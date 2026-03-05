@@ -1,0 +1,159 @@
+@font-face {
+  font-family: 'Departure Mono';
+  src: url('/DepartureMono-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Type scale — Perfect Fourth (×1.333), base 1rem = 16px */
+  --font-display-lg:  13.288rem;
+  --font-display-md:  9.969rem;
+  --font-display-sm:  7.478rem;
+  --font-h1:          5.61rem;
+  --font-h2:          4.209rem;
+  --font-h3:          3.157rem;
+  --font-h4:          2.369rem;
+  --font-h5:          1.777rem;
+  --font-h6:          1.333rem;
+  --font-subtitle:    1.333rem;
+  --font-body:        1rem;
+  --font-caption:     0.75rem;
+  --font-label:       0.75rem;
+  --font-tagline:     0.75rem;
+
+  /* Blues */
+  --bg:           #c8eaf5;
+  --bg-dark:      #9dd4ea;
+  --surface:      #ddf3fc;
+
+  /* Window border colors */
+  --win-main:     #7cb6ff;
+  --win-shiny:    #7893fa;
+  --win-shadow:   #4657d0;
+  --win-border: #1a1a1a;
+
+  /* Button colors */
+  --btn-red:      #e93530;
+  --btn-red-dark: #b01f1b;
+  --btn-blue: #9cc3ff;
+  --btn-outline: #2d3b8f;
+
+
+  /* Text */
+  --text:         #0d2b3e;
+  --text-muted:   #2a5a78;
+
+  /* General border / accent */
+  --border:       #3a8fbf;
+  --border-dark:  #1a5f8a;
+  --accent:       #00b4d8;
+  --accent-dark:  #0077a8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  font-smoothing: none;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--bg-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg-dark) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: var(--text);
+  font-family: 'Departure Mono';
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Departure Mono';
+  font-weight: normal;
+  line-height: 1.3;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--border);
+  margin: 16px 0;
+}
+
+.inset {
+  border: 2px solid var(--border-dark);
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.15);
+  background: var(--bg);
+  padding: 8px;
+}
+
+.button {
+  font-family: 'Departure Mono';
+  font-size: var(--font-body);
+  cursor: pointer;
+  background: var(--accent);
+  color: var(--text);
+  border: 2px solid var(--border-dark);
+  padding: 6px 14px;
+  box-shadow: 3px 3px 0px var(--border-dark);
+  text-decoration: none;
+  display: inline-block;
+  transition: box-shadow 0.05s, transform 0.05s;
+}
+
+.button:hover {
+  box-shadow: 2px 2px 0px var(--border-dark);
+  transform: translate(1px, 1px);
+  color: var(--text);
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+
+.button.secondary {
+  background: var(--surface);
+}
+
+.button.secondary:hover {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border: 1px solid var(--border-dark);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
