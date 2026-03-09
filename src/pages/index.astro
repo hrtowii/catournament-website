@@ -1,3 +1,7 @@
 ---
-return Astro.redirect('/countdown_page');
+import { isHomeReleased } from '../lib/release';
+
+const destination = isHomeReleased() ? '/home' : '/countdown';
+
+return Astro.redirect(destination);
 ---

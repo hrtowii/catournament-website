@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Main from '../components/Main.astro';
+import { isHomeReleased } from '../lib/release';
+import '../styles/pages/home.css';
+
+export function getStaticPaths() {
+  return isHomeReleased() ? [{ params: { page: 'home' } }] : [];
+}
+
+const { page } = Astro.params;
+
+if (page !== 'home') {
+  return Astro.redirect('/');
+}
+---
+
+<Layout>
+  <Main />
+</Layout>
