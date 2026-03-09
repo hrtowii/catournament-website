@@ -1,7 +1,12 @@
 ---
 import { isHomeReleased } from '../lib/release';
+import Layout from '../layouts/Layout.astro';
+import Main from '../components/Main.astro';
+import CountdownPage from '../components/CountdownPage.astro';
 
-const destination = isHomeReleased() ? '/home' : '/countdown';
-
-return Astro.redirect(destination);
+const showHome = isHomeReleased();
 ---
+
+<Layout>
+  {showHome ? <Main /> : <CountdownPage />}
+</Layout>
