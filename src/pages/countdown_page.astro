@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Window from '../components/Window.astro';
+import Countdown from '../components/Countdown.astro';
+import '../components/main.css';
+import './countdown_page.css';
+---
+
+<Layout>
+  <main>
+
+    <div class="countdown-page-stack">
+      <Window title="CAT TOURNAMENT">
+        <h1>Coding & Algorithms Tournament</h1>
+        <p class="subtitle">// coming soon</p>
+        <hr />
+        <div class="info-grid-2">
+          <div class="inset info-block">
+            <span class="label">STATUS</span>
+            <span class="value">REGISTRATION NOT OPEN</span>
+          </div>
+          <div class="inset info-block">
+            <span class="label">DATE</span>
+            <span class="value">15 MARCH 2026</span>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="button button-disabled" href="#" aria-disabled="true">REGISTER</a>
+        </div>
+      </Window>
+    </div>
+
+    <div class="cat-tab-container">
+      <img src="/Tab Kucing Close Up.png" class="tab-img" />
+      <img src="/cat_floating.png" class="cat-floating-img" />
+    </div>
+
+    <div class="countdown-page-stack is-countdown">
+      <div class="countdown-window">
+        <Window title="COUNTDOWN">
+          <Countdown target="2026-03-15" />
+        </Window>
+      </div>
+    </div>
+
+  </main>
+</Layout>
